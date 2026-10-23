@@ -9,10 +9,10 @@ labels: release
 
 ## Release pull request
 
-- [ ] Made with `/release` on `chore/release-<version>`, or the app's own release steps: the version, the
+- [ ] Made with `/opus:release` on `chore/release-<version>`, or the app's own release steps: the version, the
       changelog's Unreleased named for it, and What's New (majors and minors). Xcode Cloud numbers the builds
 - [ ] Checks (GitHub Actions) and Xcode Cloud's Pull Request workflow pass
-- [ ] OpusKit is on its latest release (`/update-kit`), or the pull request says why not
+- [ ] OpusKit is on its latest release (`/opus:update-kit`), or the pull request says why not
 - [ ] If the app uses Born Opus's AI: its prompt hash is listed in opus-ai's `src/apps.ts`, and opus-ai is deployed
       to production
 - [ ] If the app syncs with iCloud: the CloudKit schema is deployed from Development to Production, if a record
