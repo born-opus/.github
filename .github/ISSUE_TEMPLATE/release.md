@@ -1,17 +1,17 @@
 ---
 name: App release
-about: Every step for one version of an app, from the release pull request to the App Store
+about: Every step for sending one version of an app to the App Store, from its TestFlight build
 title: "<App> <version>"
 labels: release
 ---
 
 <!-- One issue per version. Tick each step as it's done; a step that doesn't apply gets a line saying why. -->
 
-## Release pull request
+## The version
 
-- [ ] Made with `/opus:release` on `chore/release-<version>`, or the app's own release steps: the version, the
-      changelog's Unreleased named for it, and What's New (majors and minors). Xcode Cloud numbers the builds
-- [ ] Checks (GitHub Actions) and Xcode Cloud's Pull Request workflow pass
+- [ ] The version is `main`'s: each pull request people noticed raised it with `/opus:release`, with its changelog
+      section and What's New (majors and minors). Xcode Cloud numbers the builds
+- [ ] The last pull request's Checks (GitHub Actions) and Xcode Cloud's Pull Request workflow passed
 - [ ] OpusKit is on its latest release (`/opus:update-kit`), or the pull request says why not
 - [ ] If the app uses Born Opus's AI: its prompt hash is listed in opus-ai's `src/apps.ts`, and opus-ai is deployed
       to production
@@ -22,7 +22,7 @@ labels: release
 
 ## TestFlight
 
-- [ ] The release pull request is merged, and Xcode Cloud's TestFlight workflow built and uploaded it (or
+- [ ] The build to send is chosen, usually the newest: Xcode Cloud's TestFlight workflow built and uploaded it (or
       `scripts/upload-testflight.sh <build number>` did, if Xcode Cloud couldn't or isn't set up for the app yet)
 - [ ] Processed in App Store Connect and given to the internal group
 - [ ] Installed over the last version on an iPhone, and an Apple Watch if the app has one: What's New shows once,
@@ -32,7 +32,8 @@ labels: release
 ## App Store
 
 - [ ] Screenshots retaken for anything that looks different
-- [ ] The App Store's What's New text written from the changelog
+- [ ] The App Store's What's New text written from the changelog, covering any versions since the last one on the
+      App Store that only testers had
 - [ ] Review notes say how to sign in and try anything behind it
 - [ ] Submitted for review, with phased release on and released by hand after approval
 - [ ] The submitted build's commit, named on its Xcode Cloud build page, tagged `<version>+<build>` and pushed
