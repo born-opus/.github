@@ -23,7 +23,9 @@ simulator they're from. Anything else: the test or command that shows it works. 
 
 - [ ] Tests pass, and the version check (`scripts/check-versions.sh`) where the repository has one
 - [ ] Checked in the simulator in light and dark, then on an iPhone
-- [ ] People will notice: a line under Unreleased in `CHANGELOG.md`, and the roadmap updated
+- [ ] People will notice: the version raised with `/opus:release`, with its section in `CHANGELOG.md`, and the
+      roadmap updated
+- [ ] The app keeps something new: demo examples of it in the app's Demo Data
 - [ ] Words follow OpusKit's copy rules
 - [ ] The app's AI prompt or tools changed: the new hash is listed in opus-ai's `src/apps.ts` and deployed
 - [ ] A synced record type or field changed: the CloudKit schema is deployed to Production before the next build
